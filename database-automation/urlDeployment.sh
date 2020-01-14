@@ -1,0 +1,14 @@
+SOURCE_CODE_PATH=$1
+GIT_PROD_REPOSITORY=$2
+BRANCH_NAME=$3
+GIT_REPO_URL=$4
+
+WORK_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $SOURCE_CODE_PATH/$GIT_PROD_REPOSITORY
+(
+  COMMIT_ID=`git rev-parse $BRANCH_NAME`
+  echo ">>>>"
+  echo "DEPLOYMENT PATH FOR REVIEW"
+  echo $GIT_REPO_URL"/"$GIT_PROD_REPOSITORY"/commits/"$COMMIT_ID
+  cd $WORK_DIR
+)

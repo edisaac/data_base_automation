@@ -1,0 +1,13 @@
+	echo "> "
+	echo "> S            _____       "
+	echo "> U         .-'     '-.    "
+	echo "> C       .'           '.  "
+	echo "> C      /   .      .    \ "
+	echo "> E     :                 :"
+	echo "> S     |                 |"
+	echo "> S     :   \        /    :"
+	echo ">        \   '.____.'    / "
+	echo ">         '.           .'  "
+	echo ">           '-._____.-'    "
+	echo ">                          "
+  echo $(date '+%Y%m%d_%H%M%S')

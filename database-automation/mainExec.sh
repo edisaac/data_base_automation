@@ -1,0 +1,18 @@
+set +e
+BRANCH_NAME=$1
+DB_FOLDER=$2
+BUILD_ID='E'.$3
+NOTIFICATION_USERS=$4
+SCRIPT=$5
+
+WORK_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd $WORK_DIR
+
+TEMP_FOLDER=/database/temp
+mkdir -p $TEMP_FOLDER
+
+echo "$SCRIPT" > $TEMP_FOLDER/$BUILD_ID.sql
+
+bash pushExec.sh $TEMP_FOLDER $BRANCH_NAME $DB_FOLDER $BUILD_ID $NOTIFICATION_USERS
+
